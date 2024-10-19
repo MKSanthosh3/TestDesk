@@ -1,0 +1,12 @@
+<div class="auction-item">
+  <div class="auction-image">
+    <img [src]="auction.imageUrl" [alt]="auction.name">
+  </div>
+  <div class="auction-details">
+    <h3>{{ auction.name }}</h3>
+    <p><strong>Minimum Bid:</strong> ${{ auction.minBid }}</p>
+    <p><strong>Current Bid:</strong> ${{ auction.currentBid }}</p>
+    <p><strong>Ends in:</strong> {{ auction.endDate | date: 'medium' }}</p>
+  </div>
+  <button class="bid-button" (click)="bidNow.emit(auction)">Bid now</button>
+</div>

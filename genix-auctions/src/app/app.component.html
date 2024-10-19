@@ -1,0 +1,13 @@
+<div class="app-container">
+  <app-header></app-header>
+  <div class="welcome-message">
+    <h2>Welcome <a href="#" class="user-link">Olivia!</a></h2>
+  </div>
+  <div class="auctions-list">
+    <app-auction-item 
+      *ngFor="let auction of auctions$ | async"
+      [auction]="auction"
+      (bidNow)="onBidNow($event)">
+    </app-auction-item>
+  </div>
+</div>
